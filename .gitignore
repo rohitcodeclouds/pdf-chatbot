@@ -27,7 +27,3 @@ uploads/
 # OS
 .DS_Store
 Thumbs.db
-
-#PYTHON_FILE
-chatbot_bkp.py
-main.py
