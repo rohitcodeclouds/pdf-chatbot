@@ -187,7 +187,7 @@ streamlit run ragchatbot.py
 
 # 👨‍💻 Author
 
-Developed by Sweety ✨
+Developed by Rohit ✨
 
 ---
 
