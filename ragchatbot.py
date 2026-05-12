@@ -82,7 +82,7 @@ with st.sidebar:
 #Get user question
 question = st.text_input("What’s on your mind today?", placeholder="Type your question…")
 
-#Extract contents from the uploaded file and Chunk it
+#Extract contents from the uploaded file and Chunk it into text
 if question:
     if file is not None:
         #extract text from it
