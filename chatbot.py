@@ -13,6 +13,52 @@ from langchain_groq import ChatGroq
 
 load_dotenv()
 
+st.markdown("""
+    <style>
+        /* Target sidebar header */
+        [data-testid="stSidebarHeader"]::before {
+            content: "📄 PDF Chatbot";
+            display: block;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 10px;
+            color: white;
+        }
+        section.stMain{
+             position: fixed;
+            top: 50%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        label[data-testid="stWidgetLabel"] {
+            display: block;
+            text-align: center;
+        }
+
+        /* Make sidebar container full height */
+        [data-testid="stSidebar"] > div:first-child {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Push user content to bottom */
+        [data-testid="stSidebarUserContent"] {
+            margin-top: auto;
+            padding-bottom: 1rem;
+        }
+
+        .stTextInput [data-testid="stMarkdownContainer"] p{
+                font-size: 30px;
+                padding-bottom: 15px;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 # =========================
 # Session State
 # =========================
@@ -61,7 +107,7 @@ def chunk_text(pdf_file):
 
         textchunks = text_splitter.split_text(text)
 
-        st.write(textchunks)
+        # st.write(textchunks)
 
         return textchunks
 
@@ -148,7 +194,7 @@ def prompt_guide() :
 # =========================
 
 with st.sidebar:
-    st.title("📄 PDF Chatbot")
+    # st.title("📄 PDF Chatbot")
     st.subheader('Recent Uploads', divider=True)
 
     uploaded_file = st.file_uploader("Choose a file", type="PDF")
@@ -191,8 +237,8 @@ with st.sidebar:
 # =========================
 #Text Input created
 user_question = st.text_input(
-    "Ask a question...",
-    placeholder="Enter your question..."
+    "What’s on your mind today?",
+    placeholder="Type your question..."
 )
 
 
