@@ -1,4 +1,4 @@
-# 📄 PDF Chatbot using LangChain & Groq
+# 📄 PDF Chatbot using LangChain, OPENAI & Groq
 
 An AI-powered PDF Chatbot built with Python, Streamlit, LangChain, FAISS, HuggingFace Embeddings, and Groq LLM.
 
@@ -19,6 +19,28 @@ Upload any PDF document and ask questions in natural language to get accurate, c
 
 ---
 
+# 💡 How It Works
+
+1. Upload a PDF document
+2. Extract text using pdfplumber
+3. Split text into chunks
+4. Generate embeddings using HuggingFace
+5. Store embeddings in FAISS vector database
+6. Retrieve relevant context
+7. Generate AI-powered answers using Groq LLM
+
+---
+
+# 📸 Preview
+
+The application allows users to:
+
+- Upload PDFs
+- Ask questions about uploaded documents
+- Receive context-aware answers instantly
+
+---
+
 # 🛠️ Tech Stack
 
 - Python
@@ -26,7 +48,7 @@ Upload any PDF document and ask questions in natural language to get accurate, c
 - LangChain
 - FAISS
 - HuggingFace Embeddings
-- OPENAI API
+- OpenAI API
 - Groq API
 - pdfplumber
 
@@ -37,7 +59,8 @@ Upload any PDF document and ask questions in natural language to get accurate, c
 ```bash
 pdf-chatbot/
 │
-├── app.py
+├── chatbot.py (for GROQ API)
+├── ragchatbot.py (for OPENAI API)
 ├── requirements.txt
 ├── .env
 ├── .gitignore
@@ -52,7 +75,7 @@ pdf-chatbot/
 ## 1️⃣ Clone the Repository
 
 ```bash
-[git clone https://github.com/rohitcodeclouds/pdf-chatbot.git]
+git clone https://github.com/rohitcodeclouds/pdf-chatbot.git
 ```
 
 ---
@@ -73,10 +96,16 @@ cd pdf-chatbot
 python -m venv .venv
 ```
 
-Activate environment:
+Activate environment (CMD):
 
 ```bash
 .venv\Scripts\activate
+```
+
+Activate environment (PowerShell):
+
+```powershell
+.venv\Scripts\Activate.ps1
 ```
 
 ---
@@ -107,45 +136,30 @@ pip install -r requirements.txt
 
 Create a `.env` file in the root directory.
 
-Add your Groq API key:
+Add your API keys:
 
 ```env
 GROQ_API_KEY=your_groq_api_key
+OPENAI_API_KEY=your_openai_api_key
 ```
 
-Get API Key from:
+Get Groq API Key from:
 
 https://console.groq.com/keys
+
+Get OpenAI API Key from:
+
+https://platform.openai.com/api-keys
 
 ---
 
 # ▶️ Run the Application
 
 ```bash
-streamlit run app.py
+streamlit run chatbot.py  
+        OR
+streamlit run ragchatbot.py
 ```
-
----
-
-# 💡 How It Works
-
-1. Upload a PDF document
-2. Extract text using pdfplumber
-3. Split text into chunks
-4. Generate embeddings using HuggingFace
-5. Store embeddings in FAISS vector database
-6. Retrieve relevant context
-7. Generate AI-powered answers using Groq LLM
-
----
-
-# 📸 Preview
-
-The application allows users to:
-
-- Upload PDFs
-- Ask questions about uploaded documents
-- Receive context-aware answers instantly
 
 ---
 
