@@ -52,7 +52,7 @@ pdf-chatbot/
 ## 1️⃣ Clone the Repository
 
 ```bash
-[git clone [https://github.com/rohitcodeclouds/pdf-chatbot.git]
+[git clone https://github.com/rohitcodeclouds/pdf-chatbot.git]
 ```
 
 ---
