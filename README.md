@@ -26,6 +26,7 @@ Upload any PDF document and ask questions in natural language to get accurate, c
 - LangChain
 - FAISS
 - HuggingFace Embeddings
+- OPENAI API
 - Groq API
 - pdfplumber
 
